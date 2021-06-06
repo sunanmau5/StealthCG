@@ -167,7 +167,8 @@ GameObject:
   - component: {fileID: 6165084256873735147}
   - component: {fileID: 6165084256873735146}
   - component: {fileID: 6165084256873735145}
-  - component: {fileID: 6165084256873735144}
+  - component: {fileID: 8533332724037405500}
+  - component: {fileID: 9069860062190910417}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -253,7 +254,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6165084256873735144
+--- !u!114 &8533332724037405500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,19 +263,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 6165084256873735151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc32531eab3cc144b95a9271f859b6a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 38923537a1edc48848d6ec780a5cbfeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  waitTime: 0.3
-  turnSpeed: 90
   timeToSpotPlayer: 0.5
   spotlight: {fileID: 6165084256020645139}
   viewDistance: 8
   viewMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &9069860062190910417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165084256873735151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ffc91d78cc142ef99ba7356fa22854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewDistance: 0
+  waitTime: 0.3
   pathHolder: {fileID: 6165084258120906834}
+  turnSpeed: 90
+  speed: 5
 --- !u!1 &6165084257120258587
 GameObject:
   m_ObjectHideFlags: 0
