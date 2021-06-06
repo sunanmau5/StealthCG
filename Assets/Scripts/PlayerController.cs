@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public event System.Action OnReachedEndOfLevel;
     public float moveSpeed = 7f;
+    public float walkSpeed = 7f;
+    public float sprintSpeed = 10f;
     public float smoothMoveTime = .1f;
     public float turnSpeed = 8f;
 
@@ -32,6 +34,15 @@ public class PlayerController : MonoBehaviour
         }
         float inputMagnitude = inputDirection.magnitude;
         smoothInputMagnitude = Mathf.SmoothDamp(smoothInputMagnitude, inputMagnitude, ref smoothMoveVelocity, smoothMoveTime);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = sprintSpeed;
+        }
+        else
+        {
+            moveSpeed = walkSpeed;
+        }
 
         float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg;
         angle = Mathf.LerpAngle(angle, targetAngle, Time.deltaTime * turnSpeed * inputMagnitude);

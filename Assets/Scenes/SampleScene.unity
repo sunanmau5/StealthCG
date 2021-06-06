@@ -377,6 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  walkSpeed: 5
+  sprintSpeed: 10
   smoothMoveTime: 0.1
   turnSpeed: 8
 --- !u!65 &661035360
