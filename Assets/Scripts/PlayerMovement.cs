@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
- public float speed = 2;
+    [SerializeField] private float speed = 2;
 
- Vector3 velocity;
+    [SerializeField] private float sprintSpeed = 5;
 
- // Start is called before the first frame update
- void Start()
- {
+    Vector3 velocity;
 
- }
- // Update is called once per frame
- void Update()
- {
-  float moveX = Input.GetAxis("Horizontal");
-  float moveY = Input.GetAxis("Vertical");
+    // Start is called before the first frame update
+    void Start()
+    {
 
-  Vector3 move = transform.right * moveX + transform.forward * moveY;
-  transform.position += move * Time.deltaTime * speed;
- }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        float movementSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : speed;
+
+        Vector3 move = transform.right * moveX + transform.forward * moveY;
+        transform.position += move * Time.deltaTime * movementSpeed;
+    }
 }
