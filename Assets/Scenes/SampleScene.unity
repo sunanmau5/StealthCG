@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -355,7 +355,6 @@ GameObject:
   - component: {fileID: 661035362}
   - component: {fileID: 661035361}
   - component: {fileID: 661035360}
-  - component: {fileID: 661035359}
   - component: {fileID: 661035364}
   - component: {fileID: 661035365}
   - component: {fileID: 661035366}
@@ -366,23 +365,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &661035359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661035358}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6db28450a3ac648abfe46067f30991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 7
-  walkSpeed: 5
-  sprintSpeed: 10
-  smoothMoveTime: 0.1
-  turnSpeed: 8
 --- !u!65 &661035360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1110,7 +1092,7 @@ PrefabInstance:
     - target: {fileID: 1938443568698240306, guid: 08448f6f160d0c242932446d7dee830a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0403762
+      value: 5.67
       objectReference: {fileID: 0}
     - target: {fileID: 1938443568698240306, guid: 08448f6f160d0c242932446d7dee830a,
         type: 3}
@@ -1146,6 +1128,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165084256873735140, guid: 08448f6f160d0c242932446d7dee830a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165084256873735140, guid: 08448f6f160d0c242932446d7dee830a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165084256873735140, guid: 08448f6f160d0c242932446d7dee830a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08448f6f160d0c242932446d7dee830a, type: 3}
