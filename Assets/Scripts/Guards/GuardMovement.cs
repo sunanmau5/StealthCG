@@ -1,32 +1,17 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardController : MonoBehaviour
+public class GuardMovement : MonoBehaviour
 {
-    public static event System.Action OnGuardHasSpottedPlayer;
-
-    public float speed = 5f;
-    public float waitTime = .3f;
-    public float turnSpeed = 90;
-    public float timeToSpotPlayer = .5f;
-
-    public Light spotlight;
     public float viewDistance;
-    public LayerMask viewMask;
-    float viewAngle;
-    float playerVisibleTimer;
-
+    public float waitTime = .3f;
     public Transform pathHolder;
-    Transform player;
-    Color originalSpotlightColor;
-
+    public float turnSpeed = 90;
+    public float speed = 5f;
+    // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        viewAngle = spotlight.spotAngle;
-        originalSpotlightColor = spotlight.color;
-
         Vector3[] waypoints = new Vector3[pathHolder.childCount];
         for (int i = 0; i < waypoints.Length; i++)
         {
@@ -35,45 +20,6 @@ public class GuardController : MonoBehaviour
         }
 
         StartCoroutine(FollowPath(waypoints));
-    }
-
-    void Update()
-    {
-        if (CanSeePlayer())
-        {
-            playerVisibleTimer += Time.deltaTime;
-        }
-        else
-        {
-            playerVisibleTimer -= Time.deltaTime;
-        }
-        playerVisibleTimer = Mathf.Clamp(playerVisibleTimer, 0, timeToSpotPlayer);
-        spotlight.color = Color.Lerp(originalSpotlightColor, Color.red, playerVisibleTimer / timeToSpotPlayer);
-
-        if (playerVisibleTimer >= timeToSpotPlayer)
-        {
-            if (OnGuardHasSpottedPlayer != null)
-            {
-                OnGuardHasSpottedPlayer();
-            }
-        }
-    }
-
-    bool CanSeePlayer()
-    {
-        if (Vector3.Distance(transform.position, player.position) < viewDistance)
-        {
-            Vector3 dirToPlayer = (player.position - transform.position).normalized;
-            float angleBetweenGuardAndPlayer = Vector3.Angle(transform.forward, dirToPlayer);
-            if (angleBetweenGuardAndPlayer < viewAngle / 2f)
-            {
-                if (!Physics.Linecast(transform.position, player.position, viewMask))
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     IEnumerator FollowPath(Vector3[] waypoints)
