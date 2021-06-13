@@ -23,8 +23,6 @@ public class GuardController : MonoBehaviour
         viewAngle = spotlight.spotAngle;
         spotlight.range = viewDistance;
         originalSpotlightColor = spotlight.color;
-
-
     }
 
     void Update()
