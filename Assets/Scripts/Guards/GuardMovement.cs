@@ -9,17 +9,49 @@ public class GuardMovement : MonoBehaviour
     public Transform pathHolder;
     public float turnSpeed = 90;
     public float speed = 5f;
+
+    private Animator animator;
+    private int isWalkingHash;
+    private int loseGameHash;
+
+    private bool isMoving;
+
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+
+        // get animator parameters
+        isWalkingHash = Animator.StringToHash("IsWalking");
+        loseGameHash = Animator.StringToHash("LoseGame");
+
         Vector3[] waypoints = new Vector3[pathHolder.childCount];
         for (int i = 0; i < waypoints.Length; i++)
         {
             waypoints[i] = pathHolder.GetChild(i).position;
             waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z);
         }
-
         StartCoroutine(FollowPath(waypoints));
+    }
+
+    void Update()
+    {
+        UpdateAnimation(isMoving);
+    }
+
+    void UpdateAnimation(bool isMoving)
+    {
+        bool isWalking = animator.GetBool(isWalkingHash);
+
+        if (!isWalking && isMoving)
+        {
+            animator.SetBool(isWalkingHash, true);
+        }
+
+        if (isWalking && !isMoving)
+        {
+            animator.SetBool(isWalkingHash, false);
+        }
     }
 
     IEnumerator FollowPath(Vector3[] waypoints)
@@ -32,10 +64,12 @@ public class GuardMovement : MonoBehaviour
         while (true)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetWaypoint, speed * Time.deltaTime);
+            isMoving = true;
             if (transform.position == targetWaypoint)
             {
                 targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length;
                 targetWaypoint = waypoints[targetWaypointIndex];
+                isMoving = false;
                 yield return new WaitForSeconds(waitTime);
                 yield return StartCoroutine(TurnToFace(targetWaypoint));
             }
