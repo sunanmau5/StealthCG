@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToSpotPlayer: 0.5
   spotlight: {fileID: 4894449768946564190}
-  viewDistance: 8
+  viewDistance: 10
   viewMask:
     serializedVersion: 2
     m_Bits: 64
@@ -667,7 +667,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9960785, b: 0.654902, a: 1}
-  m_Intensity: 17
+  m_Intensity: 800
   m_Range: 10
   m_SpotAngle: 40
   m_InnerSpotAngle: 1
