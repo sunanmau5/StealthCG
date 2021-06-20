@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5354790205099808490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.97958136, y: 3.3540688, z: -2.0403762}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5354790206331216324}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 5743937750049495345}
   - component: {fileID: 251554887019048480}
   - component: {fileID: 7362275741220169981}
-  - component: {fileID: 8617079047164084724}
+  - component: {fileID: 4544407298462657508}
   m_Layer: 0
   m_Name: PBR_Golem
   m_TagString: Untagged
@@ -771,8 +771,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5685653895250308633}
-  m_LocalRotation: {x: 0.000000004360623, y: 0.19772996, z: 0.000000036874457, w: 0.98025656}
-  m_LocalPosition: {x: -0.9795814, y: 3.35, z: -2.0403762}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5689198626770386405}
@@ -780,7 +780,7 @@ Transform:
   - {fileID: 5354790206471129214}
   m_Father: {fileID: 5354790206693422904}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 22.808, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &5743937750049495345
 Animator:
   serializedVersion: 3
