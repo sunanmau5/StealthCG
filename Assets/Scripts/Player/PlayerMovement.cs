@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float sprintSpeed = 6;
 
+    private bool IS_CHEAT_ON = true;
+
     private Animator animator;
     private StaminaManager staminaManager;
     private int isWalkingHash;
@@ -52,11 +54,14 @@ public class PlayerMovement : MonoBehaviour
         if (shiftPressed)
         {
             movementSpeed = stamina == 0 ? speed : sprintSpeed;
-            stamina -= (1 / staminaDepletionRate) * time;
+            if (!IS_CHEAT_ON)
+            {
+                stamina -= (1 / staminaDepletionRate) * time;
+            }
         }
         else
         {
-            if (stamina != 1)
+            if (stamina != 1 && IS_CHEAT_ON)
             {
                 stamina += 1 / staminaRegenRate * time;
             }
