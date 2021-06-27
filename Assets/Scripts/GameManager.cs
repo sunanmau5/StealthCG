@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,12 +9,14 @@ public class GameManager : MonoBehaviour
     public GameObject gameLoseUI;
     public GameObject gameWinUI;
     bool gameIsOver;
+
     // Start is called before the first frame update
     void Start()
     {
         GuardController.OnGuardHasSpottedPlayer += ShowGameLoseUI;
+        FindObjectOfType<PlayerMovement>().OnPlayerFall += ShowGameLoseUI;
         FindObjectOfType<PlayerMovement>().OnReachedEndOfLevel += ShowGameWinUI;
-;    }
+    }
 
     // Update is called once per frame
     void Update()
@@ -40,8 +43,10 @@ public class GameManager : MonoBehaviour
     void OnGameOver(GameObject gameOverUI)
     {
         gameOverUI.SetActive(true);
+
         gameIsOver = true;
         GuardController.OnGuardHasSpottedPlayer -= ShowGameLoseUI;
+        FindObjectOfType<PlayerMovement>().OnPlayerFall -= ShowGameLoseUI;
         FindObjectOfType<PlayerMovement>().OnReachedEndOfLevel -= ShowGameWinUI;
     }
 }

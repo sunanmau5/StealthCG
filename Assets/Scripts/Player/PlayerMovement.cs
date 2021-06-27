@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     public event System.Action OnReachedEndOfLevel;
+    public event System.Action OnPlayerFall;
 
     Vector3 velocity;
     bool disabled;
@@ -139,6 +140,14 @@ public class PlayerMovement : MonoBehaviour
             if (OnReachedEndOfLevel != null)
             {
                 OnReachedEndOfLevel();
+            }
+        }
+        else if (hitCollider.tag == "Hole")
+        {
+            Disable();
+            if (OnPlayerFall != null)
+            {
+                OnPlayerFall();
             }
         }
     }
