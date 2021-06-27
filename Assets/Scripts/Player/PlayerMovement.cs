@@ -8,11 +8,16 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float sprintSpeed = 6;
 
+    private bool IS_CHEAT_ON = true;
+
     private Animator animator;
     private StaminaManager staminaManager;
     private int isWalkingHash;
     private int isRunningHash;
     private int loseGameHash;
+
+    private Rigidbody rb;
+    readonly private int modifier = 5000;
 
     private float stamina = 1f;
     public float staminaDepletionRate = 2; // duration until stamina is empty
@@ -30,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GuardController.OnGuardHasSpottedPlayer += Disable;
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
         staminaManager = FindObjectOfType<StaminaManager>();
         // get animator parameters
         isWalkingHash = Animator.StringToHash("IsWalking");
@@ -52,11 +58,14 @@ public class PlayerMovement : MonoBehaviour
         if (shiftPressed)
         {
             movementSpeed = stamina == 0 ? speed : sprintSpeed;
-            stamina -= (1 / staminaDepletionRate) * time;
+            if (!IS_CHEAT_ON)
+            {
+                stamina -= (1 / staminaDepletionRate) * time;
+            }
         }
         else
         {
-            if (stamina != 1)
+            if (stamina != 1 && IS_CHEAT_ON)
             {
                 stamina += 1 / staminaRegenRate * time;
             }
@@ -71,12 +80,23 @@ public class PlayerMovement : MonoBehaviour
         }
 
         UpdateAnimation(moveY != 0, movementSpeed != speed);
-        Vector3 move = transform.right * moveX + transform.forward * moveY;
+        Vector3 mX = transform.right * moveX * Time.deltaTime * movementSpeed * modifier;
+        Vector3 mY = transform.forward * moveY * Time.deltaTime * movementSpeed * modifier;
+        // Vector3 move = new Vector3(0, 0, 1) * moveY;
 
         if (!disabled)
         {
-            transform.position += move * Time.deltaTime * movementSpeed;
+            // transform.position += move * Time.deltaTime * movementSpeed;
+            rb.AddForce(mX);
+            rb.AddForce(mY);
         }
+    }
+
+    void LogVector(Vector3 vector3, string name)
+    {
+        Debug.Log(name + ".x " + vector3.x);
+        Debug.Log(name + ".y " + vector3.y);
+        Debug.Log(name + ".z " + vector3.z);
     }
 
     void UpdateAnimation(bool isMoving, bool shiftPressed)
@@ -131,5 +151,15 @@ public class PlayerMovement : MonoBehaviour
     void UpdateStaminaUI()
     {
         staminaManager.OnStaminaUpdate(stamina);
+    }
+
+    void OnCollisionEnter()
+    {
+        rb.angularVelocity = Vector3.zero;
+    }
+
+    void OnCollisionStay()
+    {
+        rb.angularVelocity = Vector3.zero;
     }
 }
