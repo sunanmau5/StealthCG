@@ -13,15 +13,18 @@ public class MainMenu : MonoBehaviour
     public Button level3Button;
     public Button level4Button;
     public Button level5Button;
+    public GameObject panel;
+
     private Button[] buttons;
 
-    public GameObject howToPlayButton;
+    public Button howToPlayButton;
 
     private int lastLevel;
     private LevelDataManager dataManager;
 
     private void Start()
     {
+        CloseHowToPlay();
         Cursor.lockState = CursorLockMode.None;
 
         buttons = new Button[] { level1Button, level2Button, level3Button, level4Button, level5Button };
@@ -30,6 +33,8 @@ public class MainMenu : MonoBehaviour
         level3Button.onClick.AddListener(() => { PlayLevel(GetSceneName(3)); });
         level4Button.onClick.AddListener(() => { PlayLevel(GetSceneName(4)); });
         level5Button.onClick.AddListener(() => { PlayLevel(GetSceneName(5)); });
+
+        howToPlayButton.onClick.AddListener(() => { panel.SetActive(true); });
 
         StartCoroutine(GetLevelData());
 
@@ -82,6 +87,11 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void CloseHowToPlay()
+    {
+        panel.SetActive(false);
     }
 
     void Destroy()
