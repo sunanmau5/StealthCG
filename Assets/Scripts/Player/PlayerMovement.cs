@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private int isRunningHash;
     private int loseGameHash;
 
-    private Rigidbody rb;
-
     private float stamina = 1f;
     public float staminaDepletionRate = 2; // duration until stamina is empty
     public float staminaRegenRate = 5; // duration until stamina is back
@@ -38,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     {
         GuardController.OnGuardHasSpottedPlayer += Disable;
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
         staminaManager = FindObjectOfType<StaminaManager>();
         // get animator parameters
         isWalkingHash = Animator.StringToHash("IsWalking");
@@ -159,15 +156,5 @@ public class PlayerMovement : MonoBehaviour
     void UpdateStaminaUI()
     {
         staminaManager.OnStaminaUpdate(stamina);
-    }
-
-    void OnCollisionEnter()
-    {
-        rb.angularVelocity = Vector3.zero;
-    }
-
-    void OnCollisionStay()
-    {
-        rb.angularVelocity = Vector3.zero;
     }
 }
