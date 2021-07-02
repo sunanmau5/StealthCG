@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 5909261820297499939}
   - component: {fileID: 5909261820297499938}
   m_Layer: 5
-  m_Name: Text
+  m_Name: LoseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You've been spotted!
+  m_Text: You lost!
 --- !u!1 &5909261820591423801
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 5909261820661616947}
   - component: {fileID: 5909261820661616946}
   m_Layer: 5
-  m_Name: Text
+  m_Name: WinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 5909261821648857162}
   - component: {fileID: 5909261821648857161}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: PlayAgainText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -999,7 +999,7 @@ GameObject:
   - component: {fileID: 5909261821670457441}
   - component: {fileID: 5909261821670457440}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: PlayAgainText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
