@@ -23,8 +23,11 @@ public class LevelDataManager : MonoBehaviour
 
     public void SetLastLevel(int lastLevel)
     {
-        levelData.Level = lastLevel;
-        SaveLevelData();
+        if (lastLevel > levelData.Level)
+        {
+            levelData.Level = lastLevel;
+            SaveLevelData();
+        }
     }
 
     void SaveLevelData()

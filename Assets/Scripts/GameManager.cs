@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject gameLoseUI;
     public GameObject gameWinUI;
+
+    [SerializeField]
+    private int level;
+
     bool gameIsOver;
 
     // Start is called before the first frame update
@@ -32,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     void ShowGameWinUI()
     {
+        FindObjectOfType<LevelDataManager>().SetLastLevel(level);
         OnGameOver(gameWinUI);
     }
 
