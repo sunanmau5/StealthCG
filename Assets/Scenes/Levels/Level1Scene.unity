@@ -311,6 +311,11 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 800550912}
+    - target: {fileID: 3626555379954140788, guid: 907fd825e3988774caab4234b943bf44,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1226668268}
     - target: {fileID: 7447163605589988728, guid: 907fd825e3988774caab4234b943bf44,
         type: 3}
       propertyPath: m_Name
@@ -393,6 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5703344525289790368, guid: 907fd825e3988774caab4234b943bf44, type: 3}
+    - {fileID: -2677034488855008465, guid: 907fd825e3988774caab4234b943bf44, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 907fd825e3988774caab4234b943bf44, type: 3}
 --- !u!1001 &257110815
 PrefabInstance:
@@ -2376,8 +2382,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 92924050}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1226668272
-CapsuleCollider:
+--- !u!143 &1226668268
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2386,10 +2392,14 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4387246
-  m_Height: 0.8774495
-  m_Direction: 1
-  m_Center: {x: 0.17769948, y: 1.318035, z: -0.02571106}
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1249689499 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000010308128564, guid: 62b4600e7f5dabd44abe5f628fdadb63,

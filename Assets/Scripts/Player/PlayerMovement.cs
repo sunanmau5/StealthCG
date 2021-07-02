@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     private int loseGameHash;
 
     private Rigidbody rb;
-    readonly private int modifier = 5000;
 
     private float stamina = 1f;
     public float staminaDepletionRate = 2; // duration until stamina is empty
@@ -29,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool disabled;
+
+    [SerializeField]
+    private CharacterController controller;
 
 
     // Start is called before the first frame update
@@ -81,15 +83,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         UpdateAnimation(moveY != 0, movementSpeed != speed);
-        Vector3 mX = transform.right * moveX * Time.deltaTime * movementSpeed * modifier;
-        Vector3 mY = transform.forward * moveY * Time.deltaTime * movementSpeed * modifier;
-        // Vector3 move = new Vector3(0, 0, 1) * moveY;
 
+        // Move using the character controller component
+        Vector3 move = transform.right * moveX + transform.forward * moveY;
         if (!disabled)
         {
-            // transform.position += move * Time.deltaTime * movementSpeed;
-            rb.AddForce(mX);
-            rb.AddForce(mY);
+            controller.Move(move * movementSpeed * Time.deltaTime);
         }
     }
 
