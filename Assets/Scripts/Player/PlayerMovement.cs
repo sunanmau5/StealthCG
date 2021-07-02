@@ -16,9 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private int isRunningHash;
     private int loseGameHash;
 
-    private Rigidbody rb;
-    readonly private int modifier = 5000;
-
     private float stamina = 1f;
     public float staminaDepletionRate = 2; // duration until stamina is empty
     public float staminaRegenRate = 5; // duration until stamina is back
@@ -30,13 +27,15 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool disabled;
 
+    [SerializeField]
+    private CharacterController controller;
+
 
     // Start is called before the first frame update
     void Start()
     {
         GuardController.OnGuardHasSpottedPlayer += Disable;
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
         staminaManager = FindObjectOfType<StaminaManager>();
         // get animator parameters
         isWalkingHash = Animator.StringToHash("IsWalking");
@@ -81,15 +80,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         UpdateAnimation(moveY != 0, movementSpeed != speed);
-        Vector3 mX = transform.right * moveX * Time.deltaTime * movementSpeed * modifier;
-        Vector3 mY = transform.forward * moveY * Time.deltaTime * movementSpeed * modifier;
-        // Vector3 move = new Vector3(0, 0, 1) * moveY;
 
+        // Move using the character controller component
+        Vector3 move = transform.right * moveX + transform.forward * moveY;
         if (!disabled)
         {
-            // transform.position += move * Time.deltaTime * movementSpeed;
-            rb.AddForce(mX);
-            rb.AddForce(mY);
+            controller.Move(move * movementSpeed * Time.deltaTime);
         }
     }
 
@@ -160,15 +156,5 @@ public class PlayerMovement : MonoBehaviour
     void UpdateStaminaUI()
     {
         staminaManager.OnStaminaUpdate(stamina);
-    }
-
-    void OnCollisionEnter()
-    {
-        rb.angularVelocity = Vector3.zero;
-    }
-
-    void OnCollisionStay()
-    {
-        rb.angularVelocity = Vector3.zero;
     }
 }
