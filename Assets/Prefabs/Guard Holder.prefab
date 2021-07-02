@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 5743937750049495345}
   - component: {fileID: 251554887019048480}
   - component: {fileID: 7362275741220169981}
-  - component: {fileID: 8617079047164084724}
+  - component: {fileID: 4544407298462657508}
   m_Layer: 0
   m_Name: PBR_Golem
   m_TagString: Untagged
