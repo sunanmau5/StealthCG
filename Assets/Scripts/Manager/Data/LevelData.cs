@@ -7,6 +7,6 @@ public class LevelData
 
     public LevelData()
     {
-        Level = 1;
+        Level = 0;
     }
 }
