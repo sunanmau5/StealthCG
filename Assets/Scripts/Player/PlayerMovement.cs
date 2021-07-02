@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float sprintSpeed = 6;
 
-    private bool IS_CHEAT_ON = true;
+    private bool IS_CHEAT_ON = false;
 
     private Animator animator;
     private StaminaManager staminaManager;
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (stamina != 1 && IS_CHEAT_ON)
+            if (stamina != 1 && !IS_CHEAT_ON)
             {
                 stamina += 1 / staminaRegenRate * time;
             }
