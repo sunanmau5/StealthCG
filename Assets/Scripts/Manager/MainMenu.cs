@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+// Author Sunan Regi Maunakea & Louis Sutopo
 public class MainMenu : MonoBehaviour
 {
     public Button level1Button;
@@ -40,11 +41,13 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    // Get Level Scene name to load the scene
     string GetSceneName(int level)
     {
         return "Level" + level + "Scene";
     }
 
+    // Load level data progress
     IEnumerator GetLevelData()
     {
         yield return new WaitUntil(() => dataManager != null);
@@ -52,6 +55,7 @@ public class MainMenu : MonoBehaviour
         EnumerateButtons();
     }
 
+    // Disable all except the Level 1 button
     void EnumerateButtons()
     {
         for (int i = 0; i < buttons.Length; i++)
@@ -71,7 +75,7 @@ public class MainMenu : MonoBehaviour
             dataManager = FindObjectOfType<LevelDataManager>();
         }
     }
-
+    
     void DisableButton(Button button)
     {
         button.interactable = false;

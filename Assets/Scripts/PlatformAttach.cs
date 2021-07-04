@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: https://www.youtube.com/watch?v=rO19dA2jksk
 public class PlatformAttach : MonoBehaviour
 {
     [SerializeField]

@@ -1,5 +1,6 @@
 using System;
 
+// Author: Louis Sutopo
 [Serializable]
 public class LevelData
 {

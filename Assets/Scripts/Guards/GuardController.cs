@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author: Sunan Regi Maunakea & Louis Sutopo
+// Tutorial for spotting the player and drawing Gizmos: https://www.youtube.com/watch?v=jUdx_Nj4Xk0&t
+// Changed accordingly to be reusable for both guards (Golems and CCTV).
 public class GuardController : MonoBehaviour
 {
     public static event System.Action OnGuardHasSpottedPlayer;
@@ -47,6 +50,7 @@ public class GuardController : MonoBehaviour
         }
     }
 
+    // Returns true if Player is in the view cone of the guard
     bool CanSeePlayer()
     {
         if (Vector3.Distance(transform.position, player.position) < viewDistance)
@@ -64,11 +68,7 @@ public class GuardController : MonoBehaviour
         return false;
     }
 
-    float CalculateSphereRadius()
-    {
-        return viewDistance * Mathf.Tan(spotlight.spotAngle);
-    }
-
+    // Used for debugging the view cone.
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

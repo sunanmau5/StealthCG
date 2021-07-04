@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//  Author: Sunan Regi Maunakea & Louis Sutopo
+//  Video tutorial: https://www.youtube.com/watch?v=jUdx_Nj4Xk0
+//  Changes made on saving the level progress and when player falls from the plattform.
 public class GameManager : MonoBehaviour
 {
     public GameObject gameLoseUI;
@@ -34,17 +37,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Show Game Win UI when the game is won
     void ShowGameWinUI()
     {
         FindObjectOfType<LevelDataManager>().SetLastLevel(level);
         OnGameOver(gameWinUI);
     }
 
+    // Show Game Lose UI when the game is lost
     void ShowGameLoseUI()
     {
         OnGameOver(gameLoseUI);
     }
 
+    // Set the UI object to active depending whether the player win or lose the game
     void OnGameOver(GameObject gameOverUI)
     {
         gameOverUI.SetActive(true);

@@ -59,3 +59,12 @@ The original idea was to have a player who wants to steal something from a museu
 ## Gameplay Video
 
 [🔗 Link to gameplay video](https://www.dropbox.com/s/qgdtk2ud4uo6gpm/L0h4OtSmOu.mp4?dl=0#)
+
+## Tutorials Used for This Project
+
+- Tutorial on how to follow a path, how to detect if player wins, for spotting the player and drawing Gizmos: [https://www.youtube.com/watch?v=jUdx_Nj4Xk0&t](https://www.youtube.com/watch?v=jUdx_Nj4Xk0&t)
+- Tutorial on how to use Animator: [https://www.youtube.com/watch?v=vApG8aYD5aI&t=283s&ab_channel=iHeartGameDev](https://www.youtube.com/watch?v=vApG8aYD5aI&t=283s&ab_channel=iHeartGameDev)
+- Tutorial on how to control the camera using mouse: [https://www.youtube.com/watch?v=_QajrabyTJc&ab_channel=UnityUnityVerified](https://www.youtube.com/watch?v=_QajrabyTJc&ab_channel=UnityUnityVerified)
+- Tutorial on how to use Character Controller Component: [https://www.youtube.com/watch?v=4HpC--2iowE](https://www.youtube.com/watch?v=4HpC--2iowE)
+- Tutorial on Minimap: [https://www.youtube.com/watch?v=28JTTXqMvOU](https://www.youtube.com/watch?v=28JTTXqMvOU)
+- Tutorial on attaching Player to platform: [https://www.youtube.com/watch?v=rO19dA2jksk](https://www.youtube.com/watch?v=rO19dA2jksk)

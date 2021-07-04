@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+// Author: Louis Sutopo
 public class LevelDataManager : MonoBehaviour
 {
     private LevelData levelData;
@@ -11,16 +12,18 @@ public class LevelDataManager : MonoBehaviour
     private string path;
     void Start()
     {
+        // Docs: https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html
         path = Application.persistentDataPath + "/level.data";
         LoadLevelData();
     }
 
-    // call to get last level data (call on `StartScene`)
+    // Call to get last level data (call on `StartScene`)
     public int GetLastLevel()
     {
         return levelData.Level;
     }
 
+    // Mutate `levelData` object
     public void SetLastLevel(int lastLevel)
     {
         if (lastLevel > levelData.Level)
@@ -30,6 +33,7 @@ public class LevelDataManager : MonoBehaviour
         }
     }
 
+    // Save level progress on a file called `level.data`  
     void SaveLevelData()
     {
         FileStream stream = new FileStream(path, FileMode.Create);
@@ -37,6 +41,7 @@ public class LevelDataManager : MonoBehaviour
         stream.Close();
     }
 
+    // Load level progress from a file called `level.data`. Create new `LevelData` when file doesn't exist.
     public void LoadLevelData()
     {
         if (File.Exists(path))

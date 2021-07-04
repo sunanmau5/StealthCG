@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Author AurynSky
+// Taken from "Gems Ultimate Pack" prefab. Changed accordingly to our needs. 
 public class TreasureAnimation : MonoBehaviour
 {
 
@@ -26,18 +28,9 @@ public class TreasureAnimation : MonoBehaviour
     public float scaleRate;
     private float scaleTimer;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-
-
-
         if (isAnimated)
         {
             if (isRotating)

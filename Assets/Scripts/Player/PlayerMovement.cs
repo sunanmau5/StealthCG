@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author Sunan Regi Maunakea & Louis Sutopo
+// Tutorial on how to use Character Controller Component: https://www.youtube.com/watch?v=4HpC--2iowE
+// Tutorial on how to use Animator: https://www.youtube.com/watch?v=vApG8aYD5aI&t=283s&ab_channel=iHeartGameDev
+// Tutorial on how to detect if player wins: https://www.youtube.com/watch?v=jUdx_Nj4Xk0
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 2;
 
     [SerializeField] private float sprintSpeed = 6;
+
+    [SerializeField]
+    private CharacterController controller;
 
     private bool IS_CHEAT_ON = false;
 
@@ -26,9 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool disabled;
-
-    [SerializeField]
-    private CharacterController controller;
 
 
     // Start is called before the first frame update
@@ -87,13 +91,6 @@ public class PlayerMovement : MonoBehaviour
         {
             controller.Move(move * movementSpeed * Time.deltaTime);
         }
-    }
-
-    void LogVector(Vector3 vector3, string name)
-    {
-        Debug.Log(name + ".x " + vector3.x);
-        Debug.Log(name + ".y " + vector3.y);
-        Debug.Log(name + ".z " + vector3.z);
     }
 
     void UpdateAnimation(bool isMoving, bool shiftPressed)

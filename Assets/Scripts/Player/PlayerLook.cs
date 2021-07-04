@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author Louis Sutopo
+// Video Tutorial: https://www.youtube.com/watch?v=_QajrabyTJc&ab_channel=UnityUnityVerified
+// Changes made based on the camera positioning within the character prefab.
 public class PlayerLook : MonoBehaviour
 {
 
@@ -19,7 +22,6 @@ public class PlayerLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // * tuts: https://www.youtube.com/watch?v=_QajrabyTJc&ab_channel=UnityUnityVerified
         float mouseX = getNormalized(Input.GetAxis("Mouse X")); // unity premapped
         float mouseY = getNormalized(Input.GetAxis("Mouse Y")); // unity premapped
 

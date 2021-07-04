@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Author 
+// Tutorial on how to follow a path: https://www.youtube.com/watch?v=jUdx_Nj4Xk0&t
+// Tutorial on how to use Animator: https://www.youtube.com/watch?v=vApG8aYD5aI&t=283s&ab_channel=iHeartGameDev
 public class GuardMovement : MonoBehaviour
 {
     public float viewDistance;
@@ -39,6 +42,7 @@ public class GuardMovement : MonoBehaviour
         UpdateAnimation(isMoving);
     }
 
+    // Update the guard animation when moving and idling
     void UpdateAnimation(bool isMoving)
     {
         bool isWalking = animator.GetBool(isWalkingHash);
@@ -54,6 +58,7 @@ public class GuardMovement : MonoBehaviour
         }
     }
 
+    // Transform the position of the GameObject to follow the waypoints
     IEnumerator FollowPath(Vector3[] waypoints)
     {
         transform.position = waypoints[0];
@@ -77,6 +82,7 @@ public class GuardMovement : MonoBehaviour
         }
     }
 
+    // Rotate the GameObject to face the lookTarget
     IEnumerator TurnToFace(Vector3 lookTarget)
     {
         Vector3 dirToLookTarget = (lookTarget - transform.position).normalized;
@@ -90,6 +96,7 @@ public class GuardMovement : MonoBehaviour
         }
     }
 
+    // Show waypoints in Editor mode
     void OnDrawGizmos()
     {
         Vector3 startPosition = pathHolder.GetChild(0).position;
