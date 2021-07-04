@@ -55,3 +55,7 @@ The original idea was to have a player who wants to steal something from a museu
 - Character
 
   [https://assetstore.unity.com/packages/3d/characters/toony-tiny-people-demo-113188](https://assetstore.unity.com/packages/3d/characters/toony-tiny-people-demo-113188)
+
+## Gameplay Video
+
+[https://drive.google.com/file/d/1Xk344Ef0td2IDZgEMDdLebr0xQtdDQ1V/view?usp=sharing](https://drive.google.com/file/d/1Xk344Ef0td2IDZgEMDdLebr0xQtdDQ1V/view?usp=sharing)
