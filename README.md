@@ -58,4 +58,4 @@ The original idea was to have a player who wants to steal something from a museu
 
 ## Gameplay Video
 
-[🔗 Link to gameplay video](https://drive.google.com/file/d/1RXaVKDck0pKZB0c8rgysI_En-eRNCn5Z/view?usp=sharing)
+[🔗 Link to gameplay video](https://www.dropbox.com/s/qgdtk2ud4uo6gpm/L0h4OtSmOu.mp4?dl=0#)
