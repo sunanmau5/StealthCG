@@ -26,11 +26,11 @@ There are 2 type of guards in the game
 
 - **Golem**
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/54688a7d-5743-4b9e-a66b-ae6c72286b44/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/54688a7d-5743-4b9e-a66b-ae6c72286b44/Untitled.png)
+  ![./Docs/CG_Golem.png](./Docs/CG_Golem.png)
 
 - **CCTV**
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/24aa4b5b-e553-4c06-b38f-d2a2560e1d87/Untitled_(1).png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/24aa4b5b-e553-4c06-b38f-d2a2560e1d87/Untitled_(1).png)
+  ![./Docs/CG_CCTV.png](./Docs/CG_CCTV.png)
 
 There's a light that's attached to every guard to indicate their view cone. The indicator is also visible on the mini map. If you go into the view cone of a guard, it would turn to red. If you stay inside the view cone, you will get caught.
 
@@ -42,16 +42,16 @@ The original idea was to have a player who wants to steal something from a museu
 
 - Template Building Kit
 
-    [https://assetstore.unity.com/packages/3d/environments/dungeons/cartoon-temple-building-kit-lite-110397](https://assetstore.unity.com/packages/3d/environments/dungeons/cartoon-temple-building-kit-lite-110397)
+  [https://assetstore.unity.com/packages/3d/environments/dungeons/cartoon-temple-building-kit-lite-110397](https://assetstore.unity.com/packages/3d/environments/dungeons/cartoon-temple-building-kit-lite-110397)
 
 - Golem
 
-    [https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-rock-golem-pbr-hp-polyart-94707](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-rock-golem-pbr-hp-polyart-94707)
+  [https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-rock-golem-pbr-hp-polyart-94707](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-rock-golem-pbr-hp-polyart-94707)
 
 - Treasure
 
-    [https://assetstore.unity.com/packages/3d/props/simple-gems-ultimate-animated-customizable-pack-73764](https://assetstore.unity.com/packages/3d/props/simple-gems-ultimate-animated-customizable-pack-73764)
+  [https://assetstore.unity.com/packages/3d/props/simple-gems-ultimate-animated-customizable-pack-73764](https://assetstore.unity.com/packages/3d/props/simple-gems-ultimate-animated-customizable-pack-73764)
 
 - Character
 
-    [https://assetstore.unity.com/packages/3d/characters/toony-tiny-people-demo-113188](https://assetstore.unity.com/packages/3d/characters/toony-tiny-people-demo-113188)
+  [https://assetstore.unity.com/packages/3d/characters/toony-tiny-people-demo-113188](https://assetstore.unity.com/packages/3d/characters/toony-tiny-people-demo-113188)
